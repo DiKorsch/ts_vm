@@ -23,7 +23,7 @@ fi
 _result=$(virsh list --all | grep " ${NAME}" | awk '{ print $3}')
 if ([ "$_result" == "" ]); then
 	echo "VM does not exist, installing ..."
-	install;
+	install_vm;
 elif [[ "$_result" == "running" ]]; then
 	echo "VM is already running!"
 else

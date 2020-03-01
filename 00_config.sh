@@ -33,7 +33,7 @@ function check_return {
 	fi
 }
 
-function install {
+function install_vm {
 	virt-install \
 		--os-variant ubuntu18.04 \
 		--name ${NAME} \
@@ -41,6 +41,8 @@ function install {
 		--disk ${IMAGE} \
 		${NETWORKING} \
 		${OPTS} > .vm_definition.xml
+	check_return "VM Definition";
+
 	virsh define --file .vm_definition.xml
 	check_return "VM Creation";
 
