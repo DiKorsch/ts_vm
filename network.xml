@@ -1,0 +1,12 @@
+<network>
+	<name>ts_network</name>
+	<bridge name="ts_virbr"/>
+	<forward mode="nat"/>
+	<ip address="192.168.123.1" netmask="255.255.255.0">
+	<dhcp>
+		<range start="192.168.123.100" end="192.168.123.254"/>
+		<host mac='52:54:00:6c:3c:01' name='Ubuntu' ip='192.168.123.45'/>
+	</dhcp>
+	</ip>
+	<!-- <ip family="ipv6" address="2001:db8:ca2:2::1" prefix="64"/> -->
+</network>
