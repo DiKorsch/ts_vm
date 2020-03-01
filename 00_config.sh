@@ -15,7 +15,7 @@ OPTS="${OPTS} --autostart"
 OPTS="${OPTS} --print-xml"
 OPTS="${OPTS} --import"
 
-if [[ kvm-ok ]]; then
+if kvm-ok; then
 	echo "using KVM acceleration"
 	OPTS="${OPTS} --virt-type kvm"
 fi
